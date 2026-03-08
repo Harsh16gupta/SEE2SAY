@@ -140,7 +140,7 @@ const App = () => {
       // For local development
       const BACKEND_URL = "http://localhost:7860";
       // For HuggingFace deployment:
-      // const BACKEND_URL = "https://kaushalendra-marcus-beaconassist.hf.space";
+      
 
       const response = await fetch(`${BACKEND_URL}/process-video`, {
         method: "POST",
