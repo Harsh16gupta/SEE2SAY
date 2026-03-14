@@ -3,7 +3,6 @@ venv/
 
 # Hugging Face cache (models)
 ~/.cache/huggingface/
-C:/Users/yadav/.cache/huggingface/
 
 # Python cache
 __pycache__/

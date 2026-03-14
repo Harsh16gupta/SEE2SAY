@@ -3,7 +3,7 @@ uvicorn
 python-dotenv
 google-genai
 opencv-python
-PIL
+Pillow
 transformers
 torch
 gtts
