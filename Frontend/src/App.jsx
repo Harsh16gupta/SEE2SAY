@@ -174,7 +174,7 @@ const App = () => {
       const data = await response.json();
       console.log("Server response:", data);
 
-      if (data.success) {
+      if (data.final_summary) {
         setSummary(data.final_summary);
         if (data.audio) {
           const audioSrc = `data:audio/mp3;base64,${data.audio}`;
