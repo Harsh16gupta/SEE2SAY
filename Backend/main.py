@@ -3,6 +3,7 @@ from fastapi.responses import JSONResponse
 from fastapi.middleware.cors import CORSMiddleware
 import shutil
 import os
+import uuid
 from pathlib import Path
 from dotenv import load_dotenv
 
@@ -48,7 +49,8 @@ async def root():
 
 @app.post("/process-video")
 async def process_video(file: UploadFile = File(...)):
-    file_path = UPLOAD_DIR / file.filename
+    safe_filename = f"{uuid.uuid4().hex}{Path(file.filename).suffix}"
+    file_path = UPLOAD_DIR / safe_filename
     
     # Save uploaded file
     with open(file_path, "wb") as buffer:

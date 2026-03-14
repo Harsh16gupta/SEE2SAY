@@ -1,15 +1,12 @@
-import google.genai as genai  # Changed import
+import google.genai as genai  
 import os
 from dotenv import load_dotenv
 from pathlib import Path
 
-# Fix the .env path
-env_path = Path(__file__).resolve().parent / ".env"
+env_path = Path(__file__).resolve().parent.parent / ".env"
 load_dotenv(dotenv_path=env_path)
 
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
-
-print("GEMINI in client file is:", GEMINI_API_KEY[:10] if GEMINI_API_KEY else "Not found")
 
 if not GEMINI_API_KEY:
     raise ValueError("GEMINI_API_KEY not found!")
